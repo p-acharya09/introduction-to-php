@@ -3,15 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Demo</title>
-    <!-- <style>
-        body {
-            display: grid;
-            place-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: sans-serif;
-        }
-    </style> -->
 </head>
 <body>
     
@@ -21,15 +12,26 @@
 
     <?php 
         $books = [
-            "Do Android Dream of Electric Sheep",
-            "The Langoliers",
-            "Hail Mary"
+            [
+                "name" => "Do Android Dream of Electric Sheep",
+                "author" => "Philip K. Dick",
+                "purchaseURL" =>"http://example.com"
+            ],
+            [
+                "name" => "Project Hail Mary",
+                "author" => "Andy Weir",
+                "purchaseURL" => "http://example1.com"
+            ],
+            
         ];
     ?>
     <ul>
         <?php foreach ($books as $book): ?>
-            <li><?php echo $book ?></li>
-        <?php endforeach; ?>
+            <li>
+                <a href="<?= $book['purchaseURL']?>">
+                <?= $book['name'] ?>
+            </li>
+        <?php endforeach ?>
     </ul>
 </body>
 </html>
